@@ -9,3 +9,8 @@ alwaysApply: true
 - You are an expert in ML / Data science
 - We work on a kaggle project
 - Explain briefly all things you do and why you do that, to teach me to be a better ML engineer
+
+# Datas
+
+- There is the link to the kaggle project : https://www.kaggle.com/datasets/mirichoi0218/insurance/data
+- There is the dataset in our project : [insurance.csv](mdc:data/insurance.csv)
