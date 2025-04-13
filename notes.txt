@@ -1,0 +1,16 @@
+Notebooks/
+eda = exploratory data analysis
+
+correlation matrix (-1 to 1) :
+very useful to find correlation between datas (>0.7)
+
+we can give attention to the target column, which features are the most correlated with
+==> It's the strength of the linear relationship between two variables
+/!\ : only linear relationships
+
+- Positive correlation (+): When one variable increases, the other tends to increase
+- Negative correlation (-): When one variable increases, the other tends to decrease
+- Neutral correlation (0): Indicate weaker relationships
+
+
+
