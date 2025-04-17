@@ -75,38 +75,49 @@ The model performs particularly well for individuals with lower to moderate insu
 
 ### Prediction Function
 ```python
-def predict_insurance_charge(age, sex, bmi, children, smoker, region):
+def predict_insurance_charge(model, age, sex, bmi, children, smoker, region, scaler=None):
     """
     Predict insurance charges based on personal characteristics
     
     Parameters:
     -----------
+    model : trained model object
+        The trained regression model
     age : int - Age of individual (18-100)
     sex : str - 'male' or 'female'
     bmi : float - Body Mass Index value
     children : int - Number of dependents
     smoker : str - 'yes' or 'no'
     region : str - 'northeast', 'northwest', 'southeast', or 'southwest'
-    
+    scaler : object, optional
+        Fitted scaler object if scaling was applied during training
+        
     Returns:
     --------
     float - Predicted annual insurance cost in USD
     """
-    # Implementation details...
+    # Implementation details in src/predict.py
 ```
 
 ### Example
 ```python
-# Predict insurance cost for a 35-year-old male
+# Load the trained model
+import pickle
+with open('models/insurance_model.pkl', 'rb') as f:
+    model_data = pickle.load(f)
+model = model_data['model']
+
+# Predict insurance cost for a 30-year-old male
 cost = predict_insurance_charge(
-    age=35, 
+    model=model,
+    age=30, 
     sex='male', 
-    bmi=27.5, 
-    children=2, 
+    bmi=25.0, 
+    children=0, 
     smoker='no', 
     region='southeast'
 )
-print(f"Estimated monthly insurance cost: ${cost/12:.2f}")
+print(f"Estimated annual insurance cost: ${cost:.2f}")
 ```
 
 ## 🚀 Future Improvements
